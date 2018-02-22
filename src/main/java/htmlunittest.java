@@ -9,7 +9,7 @@
 // /**
 //  * Created by kpiplani on 2/16/2018.
 //  */
-// public class ClassTest {
+// public class htmlunittest {
 //     // Creating a new instance of the HTML unit driver
 
 //     // running simple test case with headless browser

@@ -1,5 +1,7 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -15,6 +17,7 @@ public class ClassTest {
     public static void test() throws InterruptedException {
 
         // Navigate to Google
+        System.setProperty("webdriver.firefox.library.path", "/usr/local/firefox");
         WebDriver driver = new FirefoxDriver();
         driver.get("http://www.gmail.com");
         driver.findElement(By.id("Email")).sendKeys("Enter user name");

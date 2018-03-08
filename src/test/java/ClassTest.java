@@ -17,7 +17,7 @@ public class ClassTest {
     public static void test() throws InterruptedException {
 
         // Navigate to Google
-        System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "/usr/bin/google-chrome");
         WebDriver driver = new ChromeDriver();
         driver.get("http://www.gmail.com");
         driver.findElement(By.id("Email")).sendKeys("Enter user name");

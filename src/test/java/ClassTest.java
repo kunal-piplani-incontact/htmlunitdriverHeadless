@@ -16,9 +16,14 @@ public class ClassTest {
     @Test
     public static void test() throws InterruptedException {
 
+
+File pathToBinary = new File("/tmp/build/673f8bf5/firefox");
+FirefoxBinary ffBinary = new FirefoxBinary(pathToBinary);
+FirefoxProfile firefoxProfile = new FirefoxProfile();       
+WebDriver driver = new FirefoxDriver(ffBinary,firefoxProfile);
         // Navigate to Google
        // System.setProperty("webdriver.chrome.driver", "/usr/bin/google-chrome");
-        FirefoxDriver driver = new FirefoxDriver ();
+      
 
         // Navigate to Google
         driver.get("www.google.com");

@@ -19,7 +19,7 @@ public class ClassTest {
         FirefoxDriver driver = new FirefoxDriver ();
 
         // Navigate to Google
-        driver.get("www.google.com");
+        driver.get("https://www.google.com");
 
         // Locate the searchbox using its name
         WebElement element = driver.findElement(By.xpath("//*[@id='ctl00_BaseContent_tbxUserName']"));

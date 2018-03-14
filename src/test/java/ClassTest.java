@@ -17,6 +17,10 @@ public class ClassTest {
 public void test1(){
 
     System.out.println("Test Complete ");
+    FirefoxDriver driver = new FirefoxDriver ();
+
+//        // Navigate to Google
+       driver.get("https://www.google.com");
 System.exit(0);
 }
     // running simple test case with headless browser

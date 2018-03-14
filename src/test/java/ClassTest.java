@@ -3,11 +3,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import org.openqa.selenium.firefox.FirefoxBinary;
-import org.openqa.selenium.firefox.FirefoxProfile;
-import java.io.File;
+
 /**
  * Created by kpiplani on 2/16/2018.
  */
@@ -16,29 +15,26 @@ public class ClassTest {
 
     // running simple test case with headless browser
     @Test
-    public static void test() throws InterruptedException {
-
-
-File pathToBinary = new File("/tmp/build/673f8bf5/firefox");
-FirefoxBinary ffBinary = new FirefoxBinary(pathToBinary);
-FirefoxProfile firefoxProfile = new FirefoxProfile();       
-WebDriver driver = new FirefoxDriver(ffBinary,firefoxProfile);
-        // Navigate to Google
-       // System.setProperty("webdriver.chrome.driver", "/usr/bin/google-chrome");
-      
+    public static void test() {
+        FirefoxDriver driver = new FirefoxDriver ();
 
         // Navigate to Google
         driver.get("www.google.com");
 
-        driver.findElement(By.id("Email")).sendKeys("Enter user name");
-        driver.findElement(By.id("next")).click();
-        Thread.sleep(2000);
-        driver.findElement(By.id("Passwd")).sendKeys("Enter Password");
-        driver.findElement(By.id("signIn")).click();
-        Thread.sleep(2000);
-        String title_Of_Page = driver.getTitle();
-        Assert.assertEquals(driver.getTitle(), title_Of_Page);
-        System.out.println("Page title matched");
+        // Locate the searchbox using its name
+        WebElement element = driver.findElement(By.xpath("//*[@id='ctl00_BaseContent_tbxUserName']"));
+
+        // Enter a search query
+        element.sendKeys("Guru99");
+
+        // Submit the query. Webdriver searches for the form using the text input element automatically
+        // No need to locate/find the submit button
+        element.submit();
+
+        // This code will print the page title
+        System.out.println("Page title is: " + driver.getTitle());
+        Assert.assertEquals("Guru99 - Google Search","Guru99 - Google Search");
+        driver.quit();
     }
 }
 

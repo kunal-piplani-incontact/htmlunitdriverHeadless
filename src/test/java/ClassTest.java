@@ -21,7 +21,6 @@ public void test1(){
 
 //        // Navigate to Google
        driver.get("https://www.google.com");
-System.exit(0);
 }
     // running simple test case with headless browser
 //    @Test
